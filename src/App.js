@@ -3,6 +3,8 @@ import fetchJsonp from 'fetch-jsonp';
 import logo from './logo.svg';
 import './App.css';
 import CurrentForecast from './components/CurrentForecast'
+import Navbar from './components/Navbar'
+
 
 const APIURL = `https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_KEY}/`
 
@@ -41,7 +43,10 @@ class App extends Component {
               fetchingData ?
               <img src={logo} className="App-logo" alt="logo" />
               :
+              <div>
+                <Navbar />
               <CurrentForecast forecast= {weatherData.currently} />
+              </div>
             }
           </div>
         </header>
