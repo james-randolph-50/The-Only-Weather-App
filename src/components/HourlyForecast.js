@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const MinutelyForecast =({ forecastData }) => {
+const HourlyForecast =({ forecastData }) => {
     const renderForecasts = forecastData.map(({ precipIntensity, precipProbability, time }, index) => 
     <div key={index} style={{ border: 'solid 1px blue', padding: '10px', margin: '16px' }}>
         <p>{moment.unix(time).format('LT')}</p>
@@ -12,10 +12,10 @@ const MinutelyForecast =({ forecastData }) => {
     )
     return (
         <div>
-        <h2>Minutely Forecast</h2>
+        <h2>Hourly Forecast</h2>
             {renderForecasts}
         </div>
     )
 } 
 
-export default MinutelyForecast
+export default HourlyForecast
