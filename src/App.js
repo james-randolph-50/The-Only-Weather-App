@@ -13,6 +13,15 @@ class App extends Component {
         weatherData: {}
       }
   }
+
+  // Get Lat and Long
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(position => {
+      console.log(position)
+    });
+  }
+
   render() {
     const { fetchingData } = this.state
     return (
