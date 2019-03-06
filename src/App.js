@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
 import logo from './logo.svg';
 import './App.css';
+import CurrentForecast from './components/CurrentForecast'
 
 const APIURL = `https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_KEY}/`
 
@@ -23,23 +24,26 @@ class App extends Component {
 
       fetchJsonp(`${APIURL}${latitude},${longitude}`)
       .then(response => response.json())
-      .then(forecast => console.log(forecast))
+      .then(weatherData => this.setState({ 
+        fetchingData: false,
+        weatherData }))
     });
   }
 
   render() {
-    const { fetchingData } = this.state
+    const { fetchingData, weatherData } = this.state
+
     return (
       <div className="App">
         <header className="App-header">
-          <p className="App-header">
+          <div className="App-header">
             {
               fetchingData ?
               <img src={logo} className="App-logo" alt="logo" />
               :
-              <h1>Data is received</h1>
+              <CurrentForecast forecast= {weatherData.currently} />
             }
-          </p>
+          </div>
         </header>
       </div>
     );
