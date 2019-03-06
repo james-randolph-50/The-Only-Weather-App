@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import fetchJsonp from 'fetch-jsonp';
 import logo from './logo.svg';
 import './App.css';
 
-const APIURL = `https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_KEY}`
+const APIURL = `https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_KEY}/`
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,11 @@ class App extends Component {
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
-      console.log(position)
+      const { latitude, longitude } = position.coords
+
+      fetchJsonp(`${APIURL}${latitude},${longitude}`)
+      .then(response => response.json())
+      .then(forecast => console.log(forecast))
     });
   }
 
