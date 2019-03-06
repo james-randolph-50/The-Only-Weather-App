@@ -2,12 +2,14 @@ import React from 'react';
 import moment from 'moment';
 
 const HourlyForecast =({ forecastData }) => {
-    const renderForecasts = forecastData.map(({ precipIntensity, precipProbability, time }, index) => 
+    const renderForecasts = forecastData.map(({ apparentTemperature, humidity, precipProbability, summary, temperature, time }, index) => 
     <div key={index} style={{ border: 'solid 1px blue', padding: '10px', margin: '16px' }}>
-        <p>{moment.unix(time).format('LT')}</p>
-        <p>Intensity of Percipitation: {precipIntensity}%</p>
+      <h3>{summary}</h3>
+        <p>{moment.unix(time).format('MMMM Do YYYY, h:mm a')}</p>
+        <p>Temperature: {Math.round(temperature)}</p>
+        <p>Feels Like: {Math.round(apparentTemperature)}</p>
         <p>Chance of Percipitation: {precipProbability}%</p>
-
+        <p>Humidity: {humidity}</p>
     </div>
     )
     return (

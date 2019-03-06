@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
 import logo from './logo.svg';
 import './App.css';
-import CurrentForecast from './components/CurrentForecast'
+import Forecast from './components/Forecast'
 import MinutelyForecast from './components/MinutelyForecast'
 import HourlyForecast from './components/HourlyForecast'
 import DailyForecast from './components/DailyForecast'
@@ -51,7 +51,12 @@ class App extends Component {
               :
               <div>
                 <Navbar changeForecast={this.handleForecastChange}/>
-                {forecastKey === 'currently' && <CurrentForecast forecast={forecast} />}
+                {forecastKey === 'currently' && 
+                <div>
+                  <h2>Current Forecast</h2>
+                  <Forecast forecast={forecast} />
+                  </div>
+                }
                 {forecastKey === 'minutely' && <MinutelyForecast forecastData={forecast.data} />}
                 {forecastKey === 'hourly' && <HourlyForecast forecastData={forecast.data} />}
                 {forecastKey === 'daily' && <DailyForecast forecastData={forecast.data} />}
