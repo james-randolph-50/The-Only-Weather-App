@@ -6,7 +6,7 @@ const CurrentForecast = ({ forecast: { apparentTemperature, humidity, precipProb
     <h2>Current Forecast</h2>
     <div style={{ border: 'solid 1px blue', padding: '10px', margin: '16px' }}>
         <h3>{summary}</h3>
-        <p>{moment.unix(time).format('dddd, MMMM do, YYYY h:mm:ss: A')}</p>
+        <p>{moment.unix(time).format('MMMM Do YYYY, h:mm a')}</p>
         <p>Temperature: {Math.round(temperature)}</p>
         <p>Feels Like: {Math.round(apparentTemperature)}</p>
         <p>Chance of Percipitation: {precipProbability}%</p>
