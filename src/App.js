@@ -4,7 +4,6 @@ import logo from './logo.svg';
 import './App.css';
 import Forecast from './components/Forecast'
 import MinutelyForecast from './components/MinutelyForecast'
-import HourlyForecast from './components/HourlyForecast'
 import DailyForecast from './components/DailyForecast'
 import Navbar from './components/Navbar'
 
@@ -58,7 +57,11 @@ class App extends Component {
                   </div>
                 }
                 {forecastKey === 'minutely' && <MinutelyForecast forecastData={forecast.data} />}
-                {forecastKey === 'hourly' && <HourlyForecast forecastData={forecast.data} />}
+                {forecastKey === 'hourly' && 
+                  <div>
+                    <h2>Hourly Forecast</h2>
+                      {forecast.data.map((forecast, index) => <Forecast key={index} forecast={forecast} />)}
+                </div> }
                 {forecastKey === 'daily' && <DailyForecast forecastData={forecast.data} />}
                 
               </div>
