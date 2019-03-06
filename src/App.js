@@ -14,11 +14,10 @@ class App extends Component {
 
       this.state = {
         fetchingData: true,
-        weatherData: {}
+        weatherData: {},
+        forecastKey: null
       }
   }
-
-  // Get Lat and Long
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
@@ -31,6 +30,8 @@ class App extends Component {
         weatherData }))
     });
   }
+
+  handleForecastChange = forecastKey => this.setState({ forecastKey: forecastKey })
 
   render() {
     const { fetchingData, weatherData } = this.state
