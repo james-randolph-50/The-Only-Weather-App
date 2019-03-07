@@ -10,8 +10,8 @@ const DailyForecast =({ forecastData }) => {
         <p>Low: {temperatureMin}</p>
         <p>Feels Like High: {apparentTemperatureMax}</p>
         <p>Feels Like Low: {apparentTemperatureMin}</p>
-        <p>Humidity: {Math.round(humidity  * 100})%</p>
-        <p>Chance of Percipitation: {Math.round(precipProbability * 100})%</p>
+        <p>Humidity: {Math.round(humidity  * 100)}%</p>
+        <p>Chance of Percipitation: {Math.round(precipProbability * 100)}%</p>
         <p>Sunrise: {moment.unix(sunriseTime).format('h:mm a')}</p>
         <p>Sunset: {moment.unix(sunsetTime).format('h:mm a')}</p>
 

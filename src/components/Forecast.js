@@ -9,7 +9,7 @@ const Forecast = ({ forecast: { apparentTemperature, humidity, precipProbability
         <p>Temperature: {Math.round(temperature)}</p>
         <p>Feels Like: {Math.round(apparentTemperature)}</p>
         <p>Chance of Percipitation: {Math.round(precipProbability * 100)}%</p>
-        <p>Humidity: {Math.round(humidity * 100})</p>
+        <p>Humidity: {Math.round(humidity * 100)}</p>
     </div>
 
 </div>
