@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const MinutelyForecast =({ forecastData }) => {
     const renderForecasts = forecastData.map(({ precipIntensity, precipProbability, time }, index) => 
-    <div key={index} style={{ border: 'solid 1px blue', padding: '10px', margin: '16px' }}>
+    <div key={index} className="forecast-card">
         <p>{moment.unix(time).format('LT')}</p>
         <p>Intensity of Percipitation: {precipIntensity}%</p>
         <p>Chance of Percipitation: {precipProbability}%</p>

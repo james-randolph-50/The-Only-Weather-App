@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const DailyForecast =({ forecastData }) => {
     const renderForecasts = forecastData.map(({ apparentTemperatureMax, apparentTemperatureMin, precipProbability, humidity, summary, temperatureMax, temperatureMin, sunriseTime, sunsetTime, time }, index) => 
-    <div key={index} style={{ border: 'solid 1px blue', padding: '10px', margin: '16px' }}>
+    <div key={index} className="forecast-card">
         <p>{moment.unix(time).format('LL')}</p>
         <h4>{summary}</h4>
         <p>High: {temperatureMax}</p>

@@ -31,3 +31,29 @@
     transform: rotate(360deg);
   }
 }
+
+.forecast-card {
+  border: 1px blue solid;
+  margin: 12px;
+  padding: 16px;
+}
+
+.navbar-btn {
+  color: white;
+  font-size: 1em;
+  font-family: Helvetica;
+  padding: 16px;
+  margin: 12px;
+  border: 1px blue solid;
+  background: transparent;
+}
+
+.navbar-btn:hover {
+  color: gray;
+}
+
+.navbar-btn:focus {
+  outline: 0;
+  border: 1px gray solid;
+  background-color: blue;
+}

@@ -49,6 +49,8 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" />
               :
               <div>
+                <h1>Weather App</h1>
+                <p>The only one of its kind!</p>
                 <Navbar changeForecast={this.handleForecastChange}/>
                 {forecastKey === 'currently' && 
                 <div>
