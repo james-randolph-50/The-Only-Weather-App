@@ -8,8 +8,8 @@ const Forecast = ({ forecast: { apparentTemperature, humidity, precipProbability
         <p>{moment.unix(time).format('MMMM Do YYYY, h:mm a')}</p>
         <p>Temperature: {Math.round(temperature)}</p>
         <p>Feels Like: {Math.round(apparentTemperature)}</p>
-        <p>Chance of Percipitation: {precipProbability}%</p>
-        <p>Humidity: {humidity}</p>
+        <p>Chance of Percipitation: {Math.round(precipProbability * 100)}%</p>
+        <p>Humidity: {Math.round(humidity * 100})</p>
     </div>
 
 </div>
